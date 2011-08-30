@@ -39,7 +39,7 @@
 # bool allset, if true, all bits are set when initialized,
 #			otherwise all bits are cleared.
 function bitarray_init(count, allset, local_i, local_num, local_intcount) {
-	bitarray_sizeofint = length(sprintf("%x", -1)) * 4;
+	bitarray_sizeofint = 32;
 	bitarray_count = count;
 
 	if (allset)
