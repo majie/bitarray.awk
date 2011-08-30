@@ -48,7 +48,7 @@ function bitarray_init(count, allset, local_i, local_num, local_intcount) {
 		local_num = 0;
 	
 	local_intcount = int(count / bitarray_sizeofint) + 1;
-	for (local_i = 0; local_i < count; local_i++) {
+	for (local_i = 0; local_i < local_intcount; local_i++) {
 		bitarray_bits[local_i] = local_num;
 	}
 	
