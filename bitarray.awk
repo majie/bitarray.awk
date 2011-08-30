@@ -52,8 +52,10 @@ function bitarray_init(count, allset, local_i, local_num, local_intcount) {
 		bitarray_bits[local_i] = local_num;
 	}
 	
-	for (local_i = 0; local_i < bitarray_sizeofint; local_i++) {
-		bitarray_masks[local_i] = lshift(1, local_i);
+	bitarray_masks[0] = 1;
+	bitarray_rmasks[0] = compl(bitarray_masks[0]);
+	for (local_i = 1; local_i < bitarray_sizeofint; local_i++) {
+		bitarray_masks[local_i] = bitarray_masks[local_i - 1] * 2;
 		bitarray_rmasks[local_i] = compl(bitarray_masks[local_i]);
 	}
 }
